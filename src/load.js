@@ -1,7 +1,3 @@
-let localLoadButton;
-let JSONFile;
-let loadState;
-
 async function loadJSON() {
     JSONFile = localLoadButton.files[0];
 
