@@ -1,8 +1,3 @@
-let stateJSON;
-let stateBlob;
-let stateBlobURL;
-let invisLink;
-
 stateJSON = Calc.getState();
 stateBlob=new Blob([JSON.stringify(stateJSON)], {type: "application/json"});
 stateBlobURL=URL.createObjectURL(stateBlob);
