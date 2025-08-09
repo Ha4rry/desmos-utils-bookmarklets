@@ -1,0 +1,25 @@
+let localLoadButton;
+let JSONFile;
+let loadState;
+
+async function loadJSON() {
+    JSONFile = localLoadButton.files[0];
+
+    if (JSONFile && JSONFile.type.startsWith("application/json")){
+        loadState = await JSONFile.text();
+        localLoadButton.remove();
+        Calc.setState(loadState);
+    }
+    else {
+        alert("Error.");
+    };
+};
+
+localLoadButton = document.createElement('input');
+localLoadButton.type = "file";
+localLoadButton.accept="application/json";
+localLoadButton.id = "loadFromJSON";
+localLoadButton.name = "loadFromJSON";
+localLoadButton.style = "display:none;";
+localLoadButton.addEventListener("change", loadJSON);
+localLoadButton.click();
